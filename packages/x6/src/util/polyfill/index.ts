@@ -33,7 +33,7 @@ if (Platform.SUPPORT_PASSIVE) {
 
 // compatible with NodeList.prototype.forEach() before chrome 51
 // https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
-if (window.NodeList && !NodeList.prototype.forEach) {
+if ((window as any).NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach as any
 }
 
